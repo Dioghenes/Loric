@@ -7,8 +7,8 @@
 
 from time import *
 from threading import *
-from txtcolors import *
-from pingsuite import *
+from txtcolors_pylib import *
+from pingsuite_pylib import *
 from os import name,system
 import sys
 
