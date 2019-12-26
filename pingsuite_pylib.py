@@ -34,7 +34,7 @@ def ping(ipaddr,timeout=0.05,defPort=0):
 			sock.close()
 			return 2
 	return 0
-	
+
 
 def ICMPpacket():
 	# This is a basic implementation of ping function written in C
@@ -50,10 +50,10 @@ def ICMPpacket():
 	primitivePacket = primitiveHead+data
 	pchsum = chksum(primitivePacket)
 	ultimateHeader = pack("BBHHH",ptype,pcode,htons(pchsum),pid,seq)
-	
+
 	ultimatePacket = ultimateHeader+data
 	return ultimatePacket
-		
+
 def chksum(primPacket):
 	# This function creates a checksum value for the given packet
 	count = 0
@@ -68,7 +68,7 @@ def chksum(primPacket):
 	chks = chks & 0xffff
 	chks = chks >> 8 | (chks << 8 & 0xff00)
 	return chks
-	
+
 def createIpRange(startIP,stopIP):
 		# Only IPs in the range a.b.c.d - a.b.e.f are returned.
 		# This means that only the last two fields of the IPs are used 
@@ -94,7 +94,7 @@ def createIpRange(startIP,stopIP):
 		for i in range(0,4):
 			startIP[i] = int(startIP[i])
 			stopIP[i] = int(stopIP[i])
-	
+
 		listOfIPs = []
 		while startIP[2] <= stopIP[2]:
 			if startIP[2] == stopIP[2]:
